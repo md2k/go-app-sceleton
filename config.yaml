@@ -1,0 +1,37 @@
+listen:
+  host: 0.0.0.0
+  port: 3000
+quotes:
+  url: http://quotes.stormconsultancy.co.uk
+  path: random.json
+cors:
+  origins:
+    - localhost
+    - 127.0.0.1
+  maxage: 15s
+  credentials: true
+  allow:
+    methods:
+      - POST
+      - GET
+      - PUT
+      - DELETE
+      - OPTIONS
+    headers:
+      - server
+      - origin
+      - range
+      - content-type
+      - if-modified-since
+      - if-none-match
+  expose:
+    headers:
+      - server
+      - origin
+      - range
+      - content-type
+      - if-modified-since
+      - if-none-match
+runtime:
+#  gogc: 800      # GOGC, if not Set it use default Go settings and it will be set to 100 (800 do less pressure on GC and improve performance, for my personal tests)
+#  gomaxprocs:    # GOMAXPROCS , if option is not set, default is to runtime.NumCPU()
